@@ -8,3 +8,5 @@ def delete_at(my_list=[], idx=0):
         rem = new[idx]
         new.remove(rem)
     return
+
+
