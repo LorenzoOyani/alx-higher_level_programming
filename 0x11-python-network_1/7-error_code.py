@@ -1,17 +1,12 @@
 #!/usr/bin/python3
-"""Display response body
-"""
+"""sends a request to the URL and displays the body of the response."""
 
-import requests
-from sys import argv
+if __name__ == "__main__":
+    import sys
+    import requests
 
-if __name__ == '__main__':
-
-    url = argv[1]
-
-    try:
-        r = requests.get(url)
-        r.raise_for_status()
-        print(r.text)
-    except Exception:
-        print('Error code: {}'.format(r.status_code))
+    response = requests.get(sys.argv[1])
+    if response.status_code >= 400:
+        print("Error code: {}".format(response.status_code))
+    else:
+        print(response.text)
