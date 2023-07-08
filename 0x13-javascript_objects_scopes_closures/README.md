@@ -1,1 +1,0 @@
-jvs objects scopes closures
